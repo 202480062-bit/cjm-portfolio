@@ -1,0 +1,9 @@
+# Ignore raw local MP4 video files (hosted on Google Drive instead)
+*.mp4
+
+# Ignore temporary manual deploy folder
+netlify-deploy/
+
+# OS & editor files
+.DS_Store
+Thumbs.db
