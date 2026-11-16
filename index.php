@@ -70,7 +70,7 @@ foreach ($categories as $catKey => $catMeta) {
         <ul class="nav-links">
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="#work">Works (<?= $categoryCounts['all'] ?>)</a></li>
-            <li><a href="#services">12 Disciplines</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#cv">Interactive CV</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
