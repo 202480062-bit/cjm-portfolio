@@ -45,7 +45,7 @@ foreach ($categories as $catKey => $catMeta) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=9">
+    <link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
 
@@ -71,7 +71,6 @@ foreach ($categories as $catKey => $catMeta) {
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="#work">Works (<?= $categoryCounts['all'] ?>)</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#cv">Interactive CV</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
 
@@ -151,8 +150,8 @@ foreach ($categories as $catKey => $catMeta) {
                 <!-- Right Crisp Frosted Pane -->
                 <div class="hero-right-pane">
                     <nav class="window-top-links" aria-label="Hero Quick Links">
+                        <a href="#home">Home</a>
                         <a href="#work">Work</a>
-                        <a href="#cv">About</a>
                         <a href="#services">Services</a>
                         <a href="#contact">Contact</a>
                     </nav>
@@ -164,11 +163,6 @@ foreach ($categories as $catKey => $catMeta) {
                         </div>
                         <h3>Freelance &amp; Creative Projects</h3>
                     </div>
-
-                    <div class="hero-cta-tagline">
-                        <span class="cta-kicker">LET’S CREATE TOGETHER</span>
-                        <h4 class="cta-headline">Turn your vision into standout visuals &amp; digital experiences.</h4>
-                    </div>
                 </div>
 
             </div>
@@ -176,48 +170,10 @@ foreach ($categories as $catKey => $catMeta) {
     </section>
 
     <!-- =======================================================================
-         GLASSMORPHIC METRICS RIBBON
-         ======================================================================= -->
-    <section class="stats-ribbon" aria-label="Portfolio Highlights">
-        <div class="stat-glass-card">
-            <div class="stat-icon"><i class="fa-solid fa-layer-group"></i></div>
-            <div class="stat-info">
-                <h4>12</h4>
-                <p>Creative Specializations</p>
-            </div>
-        </div>
-        <div class="stat-glass-card">
-            <div class="stat-icon"><i class="fa-solid fa-images"></i></div>
-            <div class="stat-info">
-                <h4><?= $categoryCounts['all'] ?>+</h4>
-                <p>Curated Sample Works</p>
-            </div>
-        </div>
-        <div class="stat-glass-card">
-            <div class="stat-icon"><i class="fa-solid fa-briefcase"></i></div>
-            <div class="stat-info">
-                <h4>PENRO</h4>
-                <p>IEC Dept. Graphic Design Intern</p>
-            </div>
-        </div>
-        <div class="stat-glass-card">
-            <div class="stat-icon"><i class="fa-solid fa-laptop-code"></i></div>
-            <div class="stat-info">
-                <h4>BS IT</h4>
-                <p>Palawan State University</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- =======================================================================
-         INTERACTIVE PORTFOLIO SHOWCASE (WITH PER-CATEGORY ANIMATIONS)
+         INTERACTIVE PORTFOLIO SHOWCASE
          ======================================================================= -->
     <section class="section-container" id="work">
         <div class="section-header">
-            <div class="section-kicker">
-                <i class="fa-solid fa-sparkles"></i>
-                <span>Interactive Work Gallery</span>
-            </div>
             <h2 class="section-title">Explore My <span>Creative Works</span></h2>
             <p class="section-desc">
                 Select any of the 12 categories below to filter and inspect real projects from my portfolio. Click any card to launch the full interactive viewer or video player.
@@ -355,16 +311,7 @@ foreach ($categories as $catKey => $catMeta) {
                         </div>
 
                         <div class="work-footer">
-                            <span>
-                                <?php if ($item['type'] === 'video'): ?>
-                                    <i class="fa-regular fa-circle-play"></i> Hover to preview • Click for Cinema
-                                <?php elseif ($isGallery): ?>
-                                    <i class="fa-solid fa-layer-group"></i> Interactive <?= $galleryCount ?>-Page Spread
-                                <?php else: ?>
-                                    <i class="fa-solid fa-magnifying-glass-plus"></i> High-Res Inspection
-                                <?php endif; ?>
-                            </span>
-                            <span class="work-action-link">
+                            <span class="work-action-link" style="margin-left:auto;">
                                 Open <i class="fa-solid fa-arrow-right"></i>
                             </span>
                         </div>
@@ -404,156 +351,6 @@ foreach ($categories as $catKey => $catMeta) {
                     </span>
                 </div>
             <?php endforeach; ?>
-        </div>
-    </section>
-
-    <!-- =======================================================================
-         INTERACTIVE CV / RESUME SECTION (BASED ON SECOND PICTURE)
-         ======================================================================= -->
-    <section class="section-container" id="cv">
-        <div class="section-header">
-            <div class="section-kicker">
-                <i class="fa-regular fa-id-badge"></i>
-                <span>Curriculum Vitae</span>
-            </div>
-            <h2 class="section-title">Education, Experience &amp; <span>Credentials</span></h2>
-            <p class="section-desc">
-                Interactive glassmorphic breakdown of my official CV — including my academic journey at Palawan State University and ACLC College PPC, and my Graphic Design Internship at PENRO Palawan.
-            </p>
-        </div>
-
-        <div class="cv-layout">
-            <!-- Left Sidebar: Inspired by the Deep Teal Column of Careen's Uploaded CV -->
-            <aside class="cv-sidebar-glass">
-                <div class="cv-avatar-box">
-                    <div class="cv-avatar-ring">
-                        <img src="<?= encodeAssetUrl($profile['avatar']) ?>" alt="<?= htmlspecialchars($profile['name']) ?>">
-                    </div>
-                    <h3><?= htmlspecialchars($profile['name']) ?></h3>
-                    <span>BS Information Technology Student</span>
-                </div>
-
-                <div class="cv-side-block">
-                    <h4>Objective</h4>
-                    <p><?= htmlspecialchars($profile['objective']) ?></p>
-                </div>
-
-                <div class="cv-side-block">
-                    <h4>Contact Details</h4>
-                    <ul class="cv-contact-list">
-                        <li>
-                            <i class="fa-solid fa-phone"></i>
-                            <span><?= htmlspecialchars($profile['contact']['phone']) ?></span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-envelope"></i>
-                            <span><?= htmlspecialchars($profile['contact']['email']) ?></span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span><?= htmlspecialchars($profile['contact']['address']) ?></span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="cv-side-block">
-                    <h4>Core CV Skills</h4>
-                    <ul class="cv-skill-bullets">
-                        <?php foreach ($profile['skills']['core'] as $coreSkill): ?>
-                            <li>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <span><?= htmlspecialchars($coreSkill) ?></span>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-            </aside>
-
-            <!-- Right Column: Education, Work Experience, Creative Skills & Character References -->
-            <div class="cv-main-glass">
-
-                <!-- Education & Work Experience Panel -->
-                <div class="cv-panel">
-                    <h3 class="cv-panel-title">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                        <span>Education &amp; Academic Background</span>
-                    </h3>
-                    <div class="timeline">
-                        <?php foreach ($profile['education'] as $edu): ?>
-                            <div class="timeline-item">
-                                <span class="timeline-period"><?= htmlspecialchars($edu['period']) ?></span>
-                                <h4><?= htmlspecialchars($edu['institution']) ?></h4>
-                                <div class="timeline-sub"><?= htmlspecialchars($edu['program']) ?></div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-
-                <div class="cv-panel">
-                    <h3 class="cv-panel-title">
-                        <i class="fa-solid fa-briefcase"></i>
-                        <span>Work Experience</span>
-                    </h3>
-                    <div class="timeline">
-                        <?php foreach ($profile['experience'] as $exp): ?>
-                            <div class="timeline-item">
-                                <span class="timeline-period">(<?= htmlspecialchars($exp['period']) ?>)</span>
-                                <h4><?= htmlspecialchars($exp['role']) ?></h4>
-                                <div class="timeline-sub"><?= htmlspecialchars($exp['department']) ?> — <?= htmlspecialchars($exp['company']) ?></div>
-                                <p><?= htmlspecialchars($exp['description']) ?></p>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-
-                <!-- Creative & Software Proficiency -->
-                <div class="cv-panel">
-                    <h3 class="cv-panel-title">
-                        <i class="fa-solid fa-sliders"></i>
-                        <span>Creative &amp; Technical Proficiency</span>
-                    </h3>
-                    <div class="skill-bars">
-                        <?php foreach ($profile['skills']['creative'] as $sk): ?>
-                            <div class="skill-bar-item">
-                                <div class="skill-bar-top">
-                                    <span><?= htmlspecialchars($sk['name']) ?></span>
-                                    <span class="skill-pct"><?= (int)$sk['level'] ?>%</span>
-                                </div>
-                                <div class="skill-track">
-                                    <div class="skill-fill" style="width: <?= (int)$sk['level'] ?>%;"></div>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-
-                    <div class="tool-chips">
-                        <?php foreach ($profile['skills']['tools'] as $tool): ?>
-                            <span class="tool-chip"><i class="fa-solid fa-check"></i><?= htmlspecialchars($tool) ?></span>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-
-                <!-- Character References -->
-                <div class="cv-panel">
-                    <h3 class="cv-panel-title">
-                        <i class="fa-solid fa-user-check"></i>
-                        <span>Character References</span>
-                    </h3>
-                    <div class="references-grid">
-                        <?php foreach ($profile['references'] as $ref): ?>
-                            <div class="ref-card">
-                                <h4><?= htmlspecialchars($ref['name']) ?></h4>
-                                <p><?= htmlspecialchars($ref['title']) ?></p>
-                                <div class="ref-phone">
-                                    <i class="fa-solid fa-phone"></i>
-                                    <span><?= htmlspecialchars($ref['phone']) ?></span>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-
-            </div>
         </div>
     </section>
 
@@ -805,6 +602,6 @@ foreach ($categories as $catKey => $catMeta) {
         window.PORTFOLIO_CATEGORIES = <?= json_encode($categories, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?>;
         window.PORTFOLIO_ITEMS = <?= json_encode($portfolioItems, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?>;
     </script>
-    <script src="script.js?v=9"></script>
+    <script src="script.js?v=10"></script>
 </body>
 </html>

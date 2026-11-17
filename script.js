@@ -362,7 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. PHP Contact & Project Inquiry Form Handler
+    // 5. Direct Gmail Inquiry Form Handler (FormSubmit -> snoclue117@gmail.com)
     const contactForm = document.getElementById('portfolioContactForm');
     const formStatus = document.getElementById('formStatus');
 
@@ -373,39 +373,45 @@ document.addEventListener('DOMContentLoaded', () => {
             const origText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Sending Inquiry...';
             submitBtn.disabled = true;
+            formStatus.className = 'form-status';
+            formStatus.textContent = '';
 
             const payload = {
                 name: contactForm.name.value.trim(),
                 email: contactForm.email.value.trim(),
                 service: contactForm.service.value,
                 budget: contactForm.budget.value,
-                message: contactForm.message.value.trim()
+                message: contactForm.message.value.trim(),
+                _subject: `New Portfolio Inquiry: ${contactForm.service.value} from ${contactForm.name.value.trim()}`,
+                _replyto: contactForm.email.value.trim(),
+                _template: 'table',
+                _captcha: 'false'
             };
 
             try {
-                const res = await fetch('contact_handler.php', {
+                const res = await fetch('https://formsubmit.co/ajax/snoclue117@gmail.com', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
                     body: JSON.stringify(payload)
                 });
 
-                if (res.ok) {
-                    const data = await res.json();
+                const data = await res.json().catch(() => ({}));
+                if (res.ok && (data.success === 'true' || data.success === true)) {
                     formStatus.className = 'form-status success';
-                    formStatus.innerHTML = `<i class="fa-solid fa-circle-check"></i> ${data.message}`;
+                    formStatus.innerHTML = `<i class="fa-solid fa-circle-check"></i> Thank you, ${payload.name}! Your ${payload.service} inquiry has been sent directly to Careen's Gmail.`;
                     contactForm.reset();
+                } else if (data.message && data.message.toLowerCase().includes('activation')) {
+                    formStatus.className = 'form-status success';
+                    formStatus.innerHTML = `<i class="fa-solid fa-envelope-circle-check"></i> Activation email sent to snoclue117@gmail.com! Please check your Gmail (and Spam folder) and click "Activate Form".`;
                 } else {
-                    throw new Error('Fallback to local storage');
+                    throw new Error(data.message || 'Unable to send email right now.');
                 }
             } catch (err) {
-                // Graceful fallback if opened via file:// protocol without Apache/PHP running
-                const saved = JSON.parse(localStorage.getItem('cjm_inquiries') || '[]');
-                saved.push({ ...payload, submitted_at: new Date().toISOString() });
-                localStorage.setItem('cjm_inquiries', JSON.stringify(saved));
-
-                formStatus.className = 'form-status success';
-                formStatus.innerHTML = `<i class="fa-solid fa-circle-check"></i> Thank you, ${payload.name}! Your ${payload.service} inquiry has been recorded for Careen Joana Mariano.`;
-                contactForm.reset();
+                formStatus.className = 'form-status error';
+                formStatus.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Could not send inquiry (${err.message}). Please email directly or try again.`;
             } finally {
                 submitBtn.innerHTML = origText;
                 submitBtn.disabled = false;

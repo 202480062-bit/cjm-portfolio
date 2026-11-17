@@ -417,7 +417,7 @@ body.scrolled .top-navbar {
 /* Left Half of First Section — Dark & Light Blue Gradient */
 .hero-left-pane {
     position: relative;
-    padding: 36px 6vw 42px;
+    padding: 36px 4vw 42px 2.5vw;
     background: var(--grad-dark-light-blue);
     display: flex;
     flex-direction: column;
@@ -684,12 +684,12 @@ body.scrolled .top-navbar {
 /* Right Half of First Section — Crisp Gradient White & Soft Light Blue */
 .hero-right-pane {
     position: relative;
-    padding: 36px 6vw 42px;
+    padding: 36px 3.5vw 42px;
     background: var(--grad-white);
     color: var(--blue-dark);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     z-index: 1;
 }
 
@@ -719,7 +719,7 @@ body.scrolled .top-navbar {
 .availability-block {
     position: relative;
     z-index: 3;
-    margin-left: auto;
+    margin: 52px 0 auto auto;
     text-align: right;
     max-width: 245px;
     padding: 18px 22px;
