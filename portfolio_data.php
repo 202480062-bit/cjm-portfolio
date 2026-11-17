@@ -1,8 +1,4 @@
 <?php
-/**
- * Portfolio & CV Data Configuration
- * Careen Joana Mariano - IT Student & Multimedia Creative Designer
- */
 
 $profile = [
     'name' => 'Careen Joana Mariano',
@@ -160,8 +156,7 @@ $categories = [
 ];
 
 $portfolioItems = [
-    // ==================== VIDEO EDITING ====================
-    // Hosted on Google Drive ("CJM Portfolio Videos" folder: 1dXM-NT3CZi3LB-_lrc6ImRZeYQApQoSL)
+
     [
         'id' => 'vid-1',
         'title' => 'Day in the Life of a Software Engineer — Palawan',
@@ -270,7 +265,6 @@ $portfolioItems = [
         'description' => 'Clean voiceover recording and audio mastering produced for the Lakbay Aral Software Engineer documentary.'
     ],
 
-    // ==================== WEB DESIGNING ====================
     [
         'id' => 'web-1',
         'title' => 'PSU Media Hub — Interactive Dark UI Website',
@@ -324,7 +318,6 @@ $portfolioItems = [
         'description' => 'Structured interface layout highlighting real-time voting progress and system administration.'
     ],
 
-    // ==================== THUMBNAILS ====================
     [
         'id' => 'thumb-1',
         'title' => 'A Week in El Nido — Software Engineer Offsite',
@@ -346,7 +339,6 @@ $portfolioItems = [
         'description' => 'Split 3-destination showcase thumbnail ("3 Destinations in 1 Trip — Travel Vlog Ep. 2") with high-contrast badge overlays.'
     ],
 
-    // ==================== LOGO DESIGN ====================
     [
         'id' => 'logo-1',
         'title' => 'College of Sciences NSTP-CWTS Official Emblem',
@@ -368,7 +360,6 @@ $portfolioItems = [
         'description' => 'Warm academic crest featuring a graduation cap, open book, laurel wreath, and sun rays for Estudyante Hub.'
     ],
 
-    // ==================== INVITATION ====================
     [
         'id' => 'inv-1',
         'title' => "Marielle's 18th Debut Celebration Invitation",
@@ -429,7 +420,6 @@ $portfolioItems = [
         'description' => 'Warm candlelit dinner invitation card for Couples Night (February 28, 2025 at 6:00 PM).'
     ],
 
-    // ==================== TARPAULIN ====================
     [
         'id' => 'tarp-1',
         'title' => 'Happy 7th Birthday Chyn — Event Tarpaulin',
@@ -451,7 +441,6 @@ $portfolioItems = [
         'description' => 'Bold green and white layered photo collage tarpaulin banner created in Adobe Photoshop.'
     ],
 
-    // ==================== PUBLICATION MATERIALS ====================
     [
         'id' => 'pub-1',
         'title' => 'Multimedia Creative Workshop — IT Dept Event Pubmat',
@@ -513,7 +502,6 @@ $portfolioItems = [
         'description' => 'Official merchandise publication layout featuring the SITE circuit-patterned ID lanyard and badge holder.'
     ],
 
-    // ==================== MERCH DESIGN ====================
     [
         'id' => 'merch-1',
         'title' => 'CENRO / PENRO Palawan — IEC Unit Official Polo Uniform',
@@ -629,7 +617,6 @@ $portfolioItems = [
         'description' => 'Complete environmental awareness sticker collection ("Go Clean Go Green", "Love The Earth", "Zero Waste", "Save Our Planet").'
     ],
 
-    // ==================== BROCHURE & PLANNERS ====================
     [
         'id' => 'broch-1',
         'title' => 'Botanical Monthly Planner — Cover & Interior Spreads',
@@ -671,7 +658,6 @@ $portfolioItems = [
         'description' => 'Clean warm-neutral cover and interior daily scheduling pages with checkboxes, dotted appointment grids, and ruled notes.'
     ],
 
-    // ==================== PRODUCT LABEL ====================
     [
         'id' => 'label-1',
         'title' => "Theo's Delights — Peanut Butter Wrap-Around Jar Label",
@@ -703,7 +689,6 @@ $portfolioItems = [
         'description' => 'Fresh aqua-blue product branding for Creation Care Grease Guard Dishwashing Gel ("The clean you can trust").'
     ],
 
-    // ==================== ADVERTISEMENT POSTER ====================
     [
         'id' => 'post-1',
         'title' => "Theo's Delights — 4-Flavor Tapioca & Jelly Desserts Poster",
@@ -755,7 +740,6 @@ $portfolioItems = [
         'description' => 'High-impact square food advertisement highlighting affordable ₱45.00 Siomai Rice.'
     ],
 
-    // ==================== INFOGRAPHICS ====================
     [
         'id' => 'info-1',
         'title' => '2D vs 3D Animation & Graphics — Comparative Infographic',

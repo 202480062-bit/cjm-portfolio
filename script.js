@@ -1,7 +1,3 @@
-/**
- * Careen Joana Mariano — Interactive Portfolio & Per-Category Animation Engine
- */
-
 document.addEventListener('DOMContentLoaded', () => {
     const categoryMeta = window.PORTFOLIO_CATEGORIES || {};
     const portfolioItems = window.PORTFOLIO_ITEMS || [];
@@ -33,17 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentCategory = 'all';
     let currentSearch = '';
 
-    // 1. Category Filtering + Per-Category Staggered Keyframe Animation
     function applyFilterAndAnimate(categoryKey, searchQuery = '') {
         currentCategory = categoryKey;
         currentSearch = searchQuery.trim().toLowerCase();
 
-        // Update active pill state
         pills.forEach(pill => {
             pill.classList.toggle('active', pill.dataset.category === currentCategory);
         });
 
-        // Update category stage banner
         const meta = categoryMeta[currentCategory] || categoryMeta['all'];
         if (meta && activeCatIcon && activeCatName && activeCatDesc && activeCatAnimBadge) {
             activeCatIcon.innerHTML = `<i class="fa-solid ${meta.icon}"></i>`;
@@ -80,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 descText.includes(currentSearch) ||
                 cardCat.includes(currentSearch);
 
-            // Reset existing animation classes
             card.classList.remove(...allAnimClasses);
 
             if (matchesCategory && matchesSearch) {
@@ -94,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Attach pill click events
     pills.forEach(pill => {
         pill.addEventListener('click', () => {
             const cat = pill.dataset.category;
@@ -102,14 +93,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Attach search input event
     if (searchInput) {
         searchInput.addEventListener('input', e => {
             applyFilterAndAnimate(currentCategory, e.target.value);
         });
     }
 
-    // Service cards jump to portfolio category
     document.querySelectorAll('.service-glass-card[data-jump-category]').forEach(sCard => {
         sCard.addEventListener('click', () => {
             const targetCat = sCard.dataset.jumpCategory;
@@ -123,7 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Glassmorphic Specular Glare + Video Hover Preview
     document.querySelectorAll('.work-card').forEach(card => {
         card.addEventListener('mousemove', e => {
             const rect = card.getBoundingClientRect();
@@ -144,7 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 3. Lightbox Modal for Works & Full CV
     const lightbox = document.getElementById('lightboxModal');
     const lbStage = document.getElementById('lightboxStage');
     const lbCategory = document.getElementById('lightboxCategory');
@@ -156,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function encodePath(rawPath) {
         if (!rawPath) return '';
-        if (/^https?:\/\//i.test(rawPath)) return rawPath;
+        if (/^https?:\/\
         return rawPath.split('/').map(segment => encodeURIComponent(segment)).join('/');
     }
 
@@ -284,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeLightbox() {
         if (!lightbox) return;
         lightbox.classList.remove('open');
-        lbStage.innerHTML = ''; // Stops any playing video/audio
+        lbStage.innerHTML = '';
         document.body.style.overflow = '';
     }
 
@@ -298,7 +285,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Open Themed CV Modal
     const cvModal = document.getElementById('cvModal');
     const cvModalClose = document.getElementById('cvModalClose');
 
@@ -338,7 +324,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 4. Theme Toggle & Scroll Navbar Visibility
     window.addEventListener('scroll', () => {
         if (window.scrollY > window.innerHeight * 0.65) {
             document.body.classList.add('scrolled');
@@ -362,7 +347,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. Direct Gmail Inquiry Form Handler (FormSubmit -> snoclue117@gmail.com)
     const contactForm = document.getElementById('portfolioContactForm');
     const formStatus = document.getElementById('formStatus');
 

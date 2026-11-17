@@ -1,11 +1,5 @@
-/* ==========================================================================
-   CAREEN JOANA MARIANO — MULTIMEDIA & IT PORTFOLIO
-   Theme: Signature Split-Window "PORTFOLIO / CREATE" Aesthetic
-   Color Palette: Gradient White, Dark Blue & Light Blue (Standard & Fitted)
-   ========================================================================== */
-
 :root {
-    /* Core Blues & Whites */
+
     --blue-deepest: #041026;
     --blue-dark: #071c3d;
     --blue-royal: #0c2b59;
@@ -16,7 +10,6 @@
     --blue-ice: #7dd3fc;
     --blue-pale: #e0f2fe;
 
-    /* Gradients */
     --grad-white: linear-gradient(145deg, #ffffff 0%, #f5f9ff 55%, #e8f3ff 100%);
     --grad-white-card: linear-gradient(165deg, #ffffff 0%, #f2f8ff 100%);
     --grad-stage-blue: linear-gradient(160deg, #38bdf8 0%, #0284c7 38%, #0c2b59 78%, #051329 100%);
@@ -26,7 +19,6 @@
     --grad-btn-blue: linear-gradient(135deg, #38bdf8 0%, #0284c7 50%, #0c2b59 100%);
     --grad-badge-blue: linear-gradient(135deg, #0ea5e9 0%, #071c3d 100%);
 
-    /* Page & Surface Tokens (Default: Luminous Gradient White + Dark & Light Blue) */
     --bg-page: #edf5ff;
     --surface-card: linear-gradient(165deg, #ffffff 0%, #f2f8ff 100%);
     --surface-glass: rgba(255, 255, 255, 0.86);
@@ -35,12 +27,10 @@
     --border-soft: rgba(12, 43, 89, 0.12);
     --border-highlight: rgba(14, 165, 233, 0.48);
 
-    /* Typography Colors */
     --text-main: #071c3d;
     --text-muted: #3b5275;
     --text-dim: #647c9c;
 
-    /* Legacy variable aliases for seamless compatibility */
     --amber-primary: #0284c7;
     --amber-bright: #0ea5e9;
     --amber-deep: #0c2b59;
@@ -48,7 +38,6 @@
     --glass-border: rgba(12, 43, 89, 0.12);
     --glass-border-highlight: rgba(14, 165, 233, 0.5);
 
-    /* Standard Radii & Shadows */
     --container-max: 1260px;
     --radius-2xl: 30px;
     --radius-xl: 24px;
@@ -60,13 +49,11 @@
     --shadow-card: 0 14px 36px rgba(7, 28, 61, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
     --shadow-card-hover: 0 22px 48px rgba(7, 28, 61, 0.16), 0 0 24px rgba(14, 165, 233, 0.2);
 
-    /* Standard Font Stack */
     --font-display: 'Bebas Neue', Impact, sans-serif;
     --font-heading: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Deep Navy Blue Alternate Theme Mode */
 [data-theme="light-amber"] {
     --bg-page: #051124;
     --surface-card: linear-gradient(165deg, rgba(12, 43, 89, 0.78) 0%, rgba(6, 21, 45, 0.92) 100%);
@@ -83,9 +70,6 @@
     --shadow-card-hover: 0 24px 55px rgba(0, 0, 0, 0.65), 0 0 28px rgba(56, 189, 248, 0.25);
 }
 
-/* ==========================================================================
-   BASE RESET & STANDARD PAGE FIT
-   ========================================================================== */
 *,
 *::before,
 *::after {
@@ -112,9 +96,6 @@ body {
     transition: background-color 0.35s ease, color 0.35s ease;
 }
 
-/* ==========================================================================
-   AMBIENT GRADIENT WHITE, LIGHT BLUE & DARK BLUE BACKGROUND CANVAS
-   ========================================================================== */
 .ambient-canvas {
     position: fixed;
     inset: 0;
@@ -188,9 +169,6 @@ body {
     background-size: 24px 24px;
 }
 
-/* ==========================================================================
-   FLOATING STANDARD NAVBAR (APPEARS ON SCROLL SO FIRST SECTION IS FULL-BLEED)
-   ========================================================================== */
 .top-navbar {
     position: fixed;
     top: 14px;
@@ -339,9 +317,6 @@ body.scrolled .top-navbar {
     box-shadow: 0 10px 24px rgba(2, 132, 199, 0.5);
 }
 
-/* ==========================================================================
-   HERO SECTION — FULL-SCREEN EDGE-TO-EDGE FIRST SECTION (NOT FLOATING)
-   ========================================================================== */
 .hero-wrapper {
     width: 100%;
     max-width: none;
@@ -366,7 +341,6 @@ body.scrolled .top-navbar {
     padding: 0;
 }
 
-/* Full-Bleed Blue & White Split Section Filling 100% of the First Screen */
 .hero-inner-window {
     position: relative;
     z-index: 3;
@@ -384,7 +358,6 @@ body.scrolled .top-navbar {
     box-shadow: none;
 }
 
-/* Giant PORTFOLIO Watermark Spanning the Background of the Hero Section */
 .portfolio-watermark {
     position: absolute;
     top: 22%;
@@ -414,7 +387,6 @@ body.scrolled .top-navbar {
     white-space: nowrap;
 }
 
-/* Left Half of First Section — Dark & Light Blue Gradient */
 .hero-left-pane {
     position: relative;
     padding: 36px 4vw 42px 2.5vw;
@@ -454,7 +426,6 @@ body.scrolled .top-navbar {
     color: #bae6fd;
 }
 
-/* Prominent CREATE Block (Role Text + CREATE + Paragraph + Matching Buttons) */
 .create-block {
     margin-top: auto;
     margin-bottom: 52px;
@@ -464,7 +435,6 @@ body.scrolled .top-navbar {
     z-index: 3;
 }
 
-/* Plain Text Role Kicker (No Border, No Background Pill) */
 .role-kicker {
     display: block;
     padding: 0;
@@ -532,7 +502,6 @@ body.scrolled .top-navbar {
     transform: translateY(-2px);
 }
 
-/* Social Proof Stack at Bottom Left */
 .hero-trust-row {
     display: flex;
     align-items: center;
@@ -581,7 +550,6 @@ body.scrolled .top-navbar {
     color: #ffffff;
 }
 
-/* Center Cutout Portrait — Extra Large Picture, No Shadow Box, No Animation, Paired Text Below */
 .hero-center-portrait {
     position: absolute;
     left: 58%;
@@ -605,7 +573,6 @@ body.scrolled .top-navbar {
     border: none;
 }
 
-/* Extra-Large Cutout Picture Only — No Circle Frame, No Shadow Box, No Animation */
 .portrait-cutout-wrap {
     position: relative;
     z-index: 2;
@@ -632,7 +599,6 @@ body.scrolled .top-navbar {
     mask-image: linear-gradient(to bottom, #000000 84%, transparent 100%);
 }
 
-/* Paired Borderless Text Below the Picture */
 .portrait-caption-below {
     position: relative;
     z-index: 3;
@@ -681,7 +647,6 @@ body.scrolled .top-navbar {
     -webkit-text-fill-color: transparent;
 }
 
-/* Right Half of First Section — Crisp Gradient White & Soft Light Blue */
 .hero-right-pane {
     position: relative;
     padding: 36px 3.5vw 42px;
@@ -764,7 +729,6 @@ body.scrolled .top-navbar {
     letter-spacing: -0.01em;
 }
 
-/* Borderless Call to Action Tagline on Right Pane (Replaces White Objectives Container) */
 .hero-cta-tagline {
     position: relative;
     z-index: 3;
@@ -819,9 +783,6 @@ body.scrolled .top-navbar {
     box-shadow: 0 12px 26px rgba(2, 132, 199, 0.4);
 }
 
-/* ==========================================================================
-   STATS RIBBON (STANDARD 4-COLUMN METRICS IN GRADIENT WHITE & BLUE)
-   ========================================================================== */
 .stats-ribbon {
     max-width: var(--container-max);
     margin: 0 auto 72px;
@@ -877,9 +838,6 @@ body.scrolled .top-navbar {
     margin-top: 2px;
 }
 
-/* ==========================================================================
-   STANDARD SECTION HEADERS
-   ========================================================================== */
 .section-container {
     max-width: var(--container-max);
     margin: 0 auto 88px;
@@ -934,9 +892,6 @@ body.scrolled .top-navbar {
     line-height: 1.65;
 }
 
-/* ==========================================================================
-   PORTFOLIO FILTER & STAGE BANNER (SPLIT BLUE & GRADIENT WHITE WINDOW)
-   ========================================================================== */
 .portfolio-controls-glass {
     border-radius: var(--radius-xl);
     background: var(--surface-card);
@@ -946,7 +901,6 @@ body.scrolled .top-navbar {
     overflow: hidden;
 }
 
-/* Top bar styled in Dark & Light Blue Gradient like the Hero Left Pane */
 .filter-top-bar {
     display: flex;
     flex-wrap: wrap;
@@ -1044,7 +998,6 @@ body.scrolled .top-navbar {
     box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
 }
 
-/* Category Pills Grid on Gradient White Pane */
 .category-pills {
     display: flex;
     flex-wrap: wrap;
@@ -1113,9 +1066,6 @@ body.scrolled .top-navbar {
     color: #ffffff;
 }
 
-/* ==========================================================================
-   PORTFOLIO CARDS GRID (STANDARD 3-COLUMN FIT + SUBTLE MINIMAL MOTION)
-   ========================================================================== */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -1143,7 +1093,6 @@ body.scrolled .top-navbar {
     transform: translateY(-2px);
 }
 
-/* Card Media Area — Deep Dark Blue & Light Blue Stage so Works Pop */
 .work-media {
     position: relative;
     height: 240px;
@@ -1167,7 +1116,6 @@ body.scrolled .top-navbar {
     transform: scale(1.02);
 }
 
-/* Contain mode for logos, mugs, tumblers, and product labels so nothing gets cropped */
 .work-card[data-category="logo-design"] .work-media img,
 .work-card[data-category="merch"] .work-media img,
 .work-card[data-category="product-label"] .work-media img {
@@ -1176,7 +1124,6 @@ body.scrolled .top-navbar {
     background: radial-gradient(circle, rgba(56, 189, 248, 0.22) 0%, rgba(4, 16, 38, 0.85) 100%);
 }
 
-/* Browser chrome top bar for Web Design cards */
 .browser-chrome {
     position: absolute;
     top: 0;
@@ -1210,7 +1157,6 @@ body.scrolled .top-navbar {
     border-radius: 99px;
 }
 
-/* Media Overlays & Badges */
 .media-top-badges {
     position: absolute;
     top: 12px;
@@ -1254,7 +1200,6 @@ body.scrolled .top-navbar {
     font-weight: 700;
 }
 
-/* Play Button Overlay for Video & Audio */
 .play-indicator {
     position: absolute;
     width: 54px;
@@ -1275,7 +1220,6 @@ body.scrolled .top-navbar {
     transform: scale(1.05);
 }
 
-/* Audio visualizer bars */
 .audio-wave-backdrop {
     width: 100%;
     height: 100%;
@@ -1294,7 +1238,6 @@ body.scrolled .top-navbar {
     opacity: 0.75;
 }
 
-/* Card Body */
 .work-body {
     padding: 20px 22px 22px;
     display: flex;
@@ -1360,9 +1303,6 @@ body.scrolled .top-navbar {
     gap: 10px;
 }
 
-/* ==========================================================================
-   SUBTLE, CALM PROJECT CARD ENTRANCE (LESSENED ANIMATION)
-   ========================================================================== */
 @keyframes subtleCardFade {
     from { opacity: 0; transform: translateY(6px); }
     to { opacity: 1; transform: translateY(0); }
@@ -1384,9 +1324,6 @@ body.scrolled .top-navbar {
     animation: subtleCardFade 0.22s ease-out both;
 }
 
-/* ==========================================================================
-   12 CREATIVE & IT SERVICES (GRADIENT WHITE CARDS WITH BLUE HOVER ACCENTS)
-   ========================================================================== */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
@@ -1457,9 +1394,6 @@ body.scrolled .top-navbar {
     color: var(--blue-sky);
 }
 
-/* ==========================================================================
-   INTERACTIVE CV / RESUME SECTION (SPLIT BLUE & GRADIENT WHITE THEME)
-   ========================================================================== */
 .cv-layout {
     display: grid;
     grid-template-columns: 0.92fr 1.48fr;
@@ -1467,7 +1401,6 @@ body.scrolled .top-navbar {
     align-items: start;
 }
 
-/* Left Column: Deep Dark Blue & Light Blue Gradient Pane matching Hero Left */
 .cv-sidebar-glass {
     border-radius: var(--radius-xl);
     background: var(--grad-dark-light-blue);
@@ -1609,7 +1542,6 @@ body.scrolled .top-navbar {
     box-shadow: 0 14px 28px rgba(14, 165, 233, 0.4);
 }
 
-/* Right Column: Gradient White Cards matching Hero Right Pane */
 .cv-main-glass {
     display: flex;
     flex-direction: column;
@@ -1647,7 +1579,6 @@ body.scrolled .top-navbar {
     box-shadow: 0 6px 14px rgba(2, 132, 199, 0.25);
 }
 
-/* Timeline Items */
 .timeline {
     position: relative;
     padding-left: 24px;
@@ -1704,7 +1635,6 @@ body.scrolled .top-navbar {
     margin-top: 6px;
 }
 
-/* Skill Progress Bars */
 .skill-bars {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -1781,7 +1711,6 @@ body.scrolled .top-navbar {
     color: var(--blue-sky);
 }
 
-/* References Grid */
 .references-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -1826,9 +1755,6 @@ body.scrolled .top-navbar {
     color: var(--blue-primary);
 }
 
-/* ==========================================================================
-   CONTACT & INQUIRY SECTION (SPLIT BLUE & GRADIENT WHITE WINDOW)
-   ========================================================================== */
 .contact-grid {
     display: grid;
     grid-template-columns: 0.95fr 1.3fr;
@@ -1836,7 +1762,6 @@ body.scrolled .top-navbar {
     align-items: stretch;
 }
 
-/* Left Contact Card — Dark & Light Blue Gradient like Hero Left Pane */
 .contact-info-glass {
     padding: 34px 32px;
     border-radius: var(--radius-xl);
@@ -1902,7 +1827,6 @@ body.scrolled .top-navbar {
     color: #ffffff;
 }
 
-/* Right Contact Form — Crisp Gradient White Pane like Hero Right Pane */
 .contact-form-glass {
     padding: 34px;
     border-radius: var(--radius-xl);
@@ -2019,9 +1943,6 @@ body.scrolled .top-navbar {
     color: #b91c1c;
 }
 
-/* ==========================================================================
-   LIGHTBOX MODAL (SPLIT DARK BLUE MEDIA STAGE + GRADIENT WHITE INFO PANE)
-   ========================================================================== */
 .lightbox-modal {
     position: fixed;
     inset: 0;
@@ -2132,9 +2053,6 @@ body.scrolled .top-navbar {
     background: var(--surface-card);
 }
 
-/* ==========================================================================
-   THEMED VIEW CV MODAL SHEET (DARK/LIGHT BLUE & GRADIENT WHITE SPLIT DESIGN)
-   ========================================================================== */
 .cv-modal-sheet {
     width: min(980px, 100%);
     max-height: 90vh;
@@ -2292,9 +2210,6 @@ body.scrolled .top-navbar {
     color: var(--blue-dark);
 }
 
-/* ==========================================================================
-   SITE FOOTER (DARK & LIGHT BLUE GRADIENT)
-   ========================================================================== */
 .site-footer {
     background: var(--grad-dark-light-blue);
     border-top: 1px solid rgba(125, 211, 252, 0.3);
@@ -2308,9 +2223,6 @@ body.scrolled .top-navbar {
     color: #ffffff;
 }
 
-/* ==========================================================================
-   RESPONSIVE BREAKPOINTS (STANDARD FIT ACROSS ALL VIEWPORTS)
-   ========================================================================== */
 @media (max-width: 1080px) {
     .hero-inner-window {
         grid-template-columns: 1fr;

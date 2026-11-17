@@ -1,9 +1,6 @@
 <?php
 require_once __DIR__ . '/portfolio_data.php';
 
-/**
- * Helper to URL-encode each path segment while preserving forward slashes
- */
 function encodeAssetUrl(string $path): string {
     if ($path === '') return '';
     if (preg_match('#^https?://#i', $path)) return $path;
@@ -12,7 +9,6 @@ function encodeAssetUrl(string $path): string {
     return implode('/', $encoded);
 }
 
-// Compute counts per category (including multi-tag items)
 $categoryCounts = [];
 foreach ($categories as $catKey => $catMeta) {
     if ($catKey === 'all') {
@@ -36,20 +32,16 @@ foreach ($categories as $catKey => $catMeta) {
     <title><?= htmlspecialchars($profile['name']) ?> — Portfolio & Creative Studio</title>
     <meta name="description" content="Official Multimedia, Graphic Design, Video Editing & Web Design Portfolio of Careen Joana Mariano, BS Information Technology Student at Palawan State University.">
 
-    <!-- Google Fonts: Bebas Neue (Display CREATE), Outfit (Clean Geometric Headings), Plus Jakarta Sans (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome 6 Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
 
-    <!-- Ambient Glassmorphic Background Orbs -->
     <div class="ambient-canvas" aria-hidden="true">
         <div class="ambient-orb orb-1"></div>
         <div class="ambient-orb orb-2"></div>
@@ -57,7 +49,6 @@ foreach ($categories as $catKey => $catMeta) {
     </div>
     <div class="noise-overlay" aria-hidden="true"></div>
 
-    <!-- Floating Glass Navigation Bar -->
     <header class="top-navbar">
         <a href="#home" class="brand-logo">
             <div class="brand-mark">CJ</div>
@@ -82,19 +73,13 @@ foreach ($categories as $catKey => $catMeta) {
         </div>
     </header>
 
-    <!-- =======================================================================
-         HERO SECTION — FULL-SCREEN FIT WITH BACKGROUND PORTFOLIO WATERMARK
-         ======================================================================= -->
     <section class="hero-wrapper" id="home">
         <div class="omnic-stage">
 
-            <!-- Inner Framed Split Window Fitted to Screen -->
             <div class="hero-inner-window">
 
-                <!-- Giant PORTFOLIO Watermark in the Background -->
                 <div class="portfolio-watermark" aria-hidden="true">PORTFOLIO</div>
 
-                <!-- Left Dark & Light Blue Gradient Pane -->
                 <div class="hero-left-pane">
                     <div class="window-mini-brand">
                         <i class="fa-solid fa-wand-magic-sparkles"></i>
@@ -134,7 +119,6 @@ foreach ($categories as $catKey => $catMeta) {
                     </div>
                 </div>
 
-                <!-- Center Overlapping Cutout Portrait of Careen Joana Mariano -->
                 <div class="hero-center-portrait">
                     <div class="portrait-halo">
                         <div class="portrait-cutout-wrap">
@@ -147,7 +131,6 @@ foreach ($categories as $catKey => $catMeta) {
                     </div>
                 </div>
 
-                <!-- Right Crisp Frosted Pane -->
                 <div class="hero-right-pane">
                     <nav class="window-top-links" aria-label="Hero Quick Links">
                         <a href="#home">Home</a>
@@ -155,23 +138,12 @@ foreach ($categories as $catKey => $catMeta) {
                         <a href="#services">Services</a>
                         <a href="#contact">Contact</a>
                     </nav>
-
-                    <div class="availability-block">
-                        <div class="avail-kicker">
-                            <span class="pulse-dot"></span>
-                            <span>Available For</span>
-                        </div>
-                        <h3>Freelance &amp; Creative Projects</h3>
-                    </div>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- =======================================================================
-         INTERACTIVE PORTFOLIO SHOWCASE
-         ======================================================================= -->
     <section class="section-container" id="work">
         <div class="section-header">
             <h2 class="section-title">Explore My <span>Creative Works</span></h2>
@@ -180,7 +152,6 @@ foreach ($categories as $catKey => $catMeta) {
             </p>
         </div>
 
-        <!-- Filter & Search Glass Panel -->
         <div class="portfolio-controls-glass">
             <div class="filter-top-bar">
                 <div class="active-cat-banner">
@@ -202,7 +173,6 @@ foreach ($categories as $catKey => $catMeta) {
                 </div>
             </div>
 
-            <!-- 12 Category Filter Pills -->
             <div class="category-pills" role="tablist" aria-label="Portfolio Categories">
                 <?php foreach ($categories as $catKey => $catMeta): ?>
                     <button
@@ -218,7 +188,6 @@ foreach ($categories as $catKey => $catMeta) {
             </div>
         </div>
 
-        <!-- Portfolio Cards Grid -->
         <div class="portfolio-grid" id="portfolioGrid">
             <?php foreach ($portfolioItems as $index => $item):
                 $catKey = $item['category'];
@@ -321,9 +290,6 @@ foreach ($categories as $catKey => $catMeta) {
         </div>
     </section>
 
-    <!-- =======================================================================
-         12 CREATIVE DISCIPLINES & SERVICES SECTION
-         ======================================================================= -->
     <section class="section-container" id="services">
         <div class="section-header">
             <div class="section-kicker">
@@ -354,9 +320,6 @@ foreach ($categories as $catKey => $catMeta) {
         </div>
     </section>
 
-    <!-- =======================================================================
-         CONTACT & PHP INQUIRY FORM SECTION
-         ======================================================================= -->
     <section class="section-container" id="contact">
         <div class="section-header">
             <div class="section-kicker">
@@ -452,9 +415,6 @@ foreach ($categories as $catKey => $catMeta) {
         </div>
     </section>
 
-    <!-- =======================================================================
-         INTERACTIVE LIGHTBOX MODAL (VIDEO, AUDIO, MULTI-PAGE GALLERY & CV)
-         ======================================================================= -->
     <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
         <div class="lightbox-dialog">
             <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close Viewer">
@@ -479,9 +439,6 @@ foreach ($categories as $catKey => $catMeta) {
         </div>
     </div>
 
-    <!-- =======================================================================
-         THEMED VIEW CV MODAL (MATCHING BLUE & GRADIENT WHITE SPLIT DESIGN)
-         ======================================================================= -->
     <div class="lightbox-modal" id="cvModal" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle">
         <div class="cv-modal-sheet">
             <button type="button" class="lightbox-close" id="cvModalClose" aria-label="Close CV">
@@ -489,7 +446,7 @@ foreach ($categories as $catKey => $catMeta) {
             </button>
 
             <div class="cv-sheet-grid">
-                <!-- Left Dark & Light Blue Gradient Column -->
+
                 <div class="cv-sheet-left">
                     <div class="cv-sheet-portrait">
                         <img src="<?= encodeAssetUrl($profile['avatar']) ?>?v=9" alt="<?= htmlspecialchars($profile['name']) ?>">
@@ -531,7 +488,6 @@ foreach ($categories as $catKey => $catMeta) {
                     </div>
                 </div>
 
-                <!-- Right Crisp Gradient White Column -->
                 <div class="cv-sheet-right">
                     <div class="cv-sheet-header">
                         <span class="cv-sheet-kicker">CURRICULUM VITAE</span>
@@ -592,12 +548,10 @@ foreach ($categories as $catKey => $catMeta) {
 
     <footer class="site-footer">
         <p>
-            &copy; <?= date('Y') ?> <strong><?= htmlspecialchars($profile['name']) ?></strong> • BS Information Technology, Palawan State University.<br>
-            Crafted with HTML5, Modern Glassmorphism CSS3, Interactive JavaScript &amp; PHP.
+            &copy; <?= date('Y') ?> <strong><?= htmlspecialchars($profile['name']) ?></strong> • BS Information Technology, Palawan State University.
         </p>
     </footer>
 
-    <!-- Pass PHP Portfolio Data to JavaScript for Instant Interactive Lightbox & Filtering -->
     <script>
         window.PORTFOLIO_CATEGORIES = <?= json_encode($categories, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?>;
         window.PORTFOLIO_ITEMS = <?= json_encode($portfolioItems, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?>;

@@ -1,8 +1,4 @@
 <?php
-/**
- * PHP Backend Contact & Project Inquiry Handler
- * Careen Joana Mariano Portfolio Website
- */
 
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
@@ -42,7 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// Support both JSON body and standard form-urlencoded POST
 $input = json_decode(file_get_contents('php://input'), true);
 if (!is_array($input)) {
     $input = $_POST;
