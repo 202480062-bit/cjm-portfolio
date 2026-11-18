@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function encodePath(rawPath) {
         if (!rawPath) return '';
-        if (/^https?:\/\
+        if (rawPath.startsWith('http://') || rawPath.startsWith('https://')) return rawPath;
         return rawPath.split('/').map(segment => encodeURIComponent(segment)).join('/');
     }
 

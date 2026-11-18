@@ -556,6 +556,6 @@ foreach ($categories as $catKey => $catMeta) {
         window.PORTFOLIO_CATEGORIES = <?= json_encode($categories, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?>;
         window.PORTFOLIO_ITEMS = <?= json_encode($portfolioItems, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?>;
     </script>
-    <script src="script.js?v=10"></script>
+    <script src="script.js?v=11"></script>
 </body>
 </html>
