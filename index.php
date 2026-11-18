@@ -38,7 +38,7 @@ foreach ($categories as $catKey => $catMeta) {
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <link rel="stylesheet" href="style.css?v=10">
+    <link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
 
@@ -449,7 +449,7 @@ foreach ($categories as $catKey => $catMeta) {
 
                 <div class="cv-sheet-left">
                     <div class="cv-sheet-portrait">
-                        <img src="<?= encodeAssetUrl($profile['avatar']) ?>?v=9" alt="<?= htmlspecialchars($profile['name']) ?>">
+                        <img src="assets/cv_portrait.jpg" alt="<?= htmlspecialchars($profile['name']) ?>">
                     </div>
 
                     <div class="cv-sheet-side-section">
